@@ -69,3 +69,54 @@ if (response5.toLowerCase()[0] === answers[4]) {
   alert('Sorry thats incorrect.');
 }
 alert(`Current score: ${userScore}`);
+// NUUMBER GUESSING GAME pt.1
+const randomNumber = Math.floor((Math.random()* 10)) + 1;
+
+  const MAX_NUMBER_GUESSES = 4; 
+  const MAX_TRIVIA_GUESSES = 6; 
+  let numNumberGuesses = 0;
+  let numTriviaGuesses = 0;
+  let correctNumberAnswer = false;
+  let correctTriviaAnswer = false;
+  let userAnswer = '';
+  let hint = '';
+
+  console.log('Shh, don\'t tell anyone, but this is my secret number: ' + randomNumber);
+
+  // NUMBER GUESSING GAME pt.2
+  do {
+    userAnswer = prompt(hint + 'Guess a number between 1 and 10. ' + (MAX_NUMBER_GUESSES - numNumberGuesses) + ' guesses remaining.');
+    userAnswer = parseInt(userAnswer);
+    numNumberGuesses += 1;
+    if (userAnswer === randomNumber) {
+      correctNumberAnswer = true;
+    } else if (userAnswer < randomNumber) {
+      hint = 'Too low\n\n';
+    } else {
+      hint = 'Too high\n\n';
+    }
+  } while (numNumberGuesses < MAX_NUMBER_GUESSES && !correctNumberAnswer);
+
+  if (correctNumberAnswer) {
+    alert('You are correct!')
+  } else {
+    alert('All wrong. The number was: ' + randomNumber);
+  }
+
+
+// ARRAY QUESTION
+const multipleGuessQuestion = 'What is one of my favorite colors?';
+const multipleGuessAnswers = ['red', 'green', 'blue', 'black', 'white'];
+
+for (let attempts = 6; attempts > 0; attempts--) {
+  let response = prompt(multipleGuessQuestion);
+  if(multipleGuessAnswers.includes(response)) {
+    userScore++;
+    alert('Correct!');
+    break;
+  } else {
+    alert(`Incorrect, you have ${attempts} attempts left`);
+  }
+}
+
+alert(`Game over! Here's your score: ${userScore}`);

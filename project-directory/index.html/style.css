@@ -1,17 +1,20 @@
+header {
+    background-color:lightgray;
+}
+
 * {
     margin: 0;
     scroll-padding-top: 7.5rem;
 }
-  
-  body {
+
+body {
     margin: 0 10rem;
-  }
-  
-  main {
+}
+
+main {
     background-color: lightgray;
     height: 100%;
     padding: 2rem;
     margin-top: 6rem;
     margin-bottom: 5rem;
-  }
-  
+}
