@@ -69,6 +69,9 @@ if (response5.toLowerCase()[0] === answers[4]) {
   alert('Sorry thats incorrect.');
 }
 alert(`Current score: ${userScore}`);
+
+// add question 6 and 7
+
 // NUUMBER GUESSING GAME pt.1
 const randomNumber = Math.floor((Math.random()* 10)) + 1;
 
